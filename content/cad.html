@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Realize seu Cadastro</title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+        <script language="JavaScript" type="text/javascript">
+            function mascaraData(campoData){
+                        var data = campoData.value;
+                        if (data.length == 2){
+                            data = data + '/';
+                            document.forms[0].data.value = data;
+                return true;              
+                        }
+                        if (data.length == 5){
+                            data = data + '/';
+                            document.forms[0].data.value = data;
+                            return true;
+                        }
+                    }
+            function mascaraGenerica(evt, campo, padrao) {  
+                var charCode = (evt.which) ? evt.which : evt.keyCode;  
+                if (charCode == 8) return true;   
+                if (charCode != 46 && (charCode < 48 || charCode > 57)) return false;             
+                campo.maxLength = padrao.length;  
+                entrada = campo.value;  
+                if (padrao.length > entrada.length && padrao.charAt(entrada.length) != '#') {  
+                        campo.value = entrada + padrao.charAt(entrada.length);                 
+                }  
+                return true;  
+            }          
+        </script>
+    </head>
+    <body>
+        <div class="form">
+        <form action="index.php?id=cad_membros" method="POST" >
+            <h3>DADOS DE CADASTRO</h3>
+            <div>
+                <label for="name">Nome: <input type="text" name="nome" placeholder="Ex.: João da Silva" required></label>
+            </div>
+            <div>
+                <label for="cpf">CPF: <input type="text" name="cpf" placeholder="Ex.: 000.000.000-00" onkeypress="return mascaraGenerica(event, this, '###.###.###-##');" required></label>
+            </div>
+            <div>
+                <label for="phone">Telefone: <input type="text" name="telefone" placeholder="Ex.: (00) 0000-0000" onkeypress="return mascaraGenerica(event, this, '(##) ####-####');" required></label>
+            </div>
+            <div>
+                <label for="adress">Endereço: <input type="text" name="endereco" placeholder="Ex.: Avenida Brasil" required></label>
+            </div>
+            <div>
+                <label for="sex">Sexo:</label>
+            </div>
+            <div class="radio">
+                <label for="sex">Masc: <input type="radio" name="sexo" value="M" checked required></label><br>
+                <label for="sex">Fem: <input type="radio" name="sexo" value="F" checked required></label>
+            </div>
+            <div>
+                <label for="birthday">Data Nasc.: <input type="text" name="data" placeholder="Ex.: dd/mm/aaaa" maxlength="10" onkeyup="mascaraData(this);" required></label>
+            </div>
+            <div>
+                <label for="mail">Email: <input type="text" name="email" placeholder="Ex.: joaodasilva@gmail.com" required></label>  
+            </div>
+            <hr><h4>CRIE UM LOGIN PARA ACESSAR O SITE</h4>
+            <div>
+                <label for="user">Usuário: <input type="text" name="usuario" id="usuario" required></label>
+            </div>
+            <div>
+                <label for="password">Senha: <input type="password" name="senha" id="senha" required></label>
+            </div>
+            <input type="submit" value="Cadastrar">
+        </form>
+        </div>
+    </body>
+</html>

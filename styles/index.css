@@ -1,0 +1,82 @@
+/* GLOBAIS */
+.main_content {
+    display: flex;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    min-height: 10vh;
+    padding: 5px;
+    /*background: #B8CBC5; */
+    color: #ffffff;
+	border-bottom: #e8491d 3px solid;
+	background: url(../images/banner.jpg) no-repeat 0px -30px;
+    background-size: cover;
+}
+
+header nav {
+	margin-top: 5px;
+	align-items: flex-end;
+	display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header li {
+  display: inline;
+}
+
+header a {
+    color: white;
+    padding: 14px 16px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 1.0s;
+}
+
+/* Change the link color to #111 (black) on hover */
+header a:hover {
+    color: gray;
+	background-color: transparent;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.login {
+	float: right;
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
+
+.login_img {
+	height: 25px;
+	width: 25px;
+	margin: auto;
+	position: absolute;
+}
+
+main {
+    width: 100%;
+	margin: 0;
+    background-color: #ffffff;
+    min-height: 80vh;
+    /* min-height: 200px; */
+    padding: 5px;
+    border-bottom: #e8491d 3px solid;
+}
+
+footer {
+    width: 100%;
+    min-height: 10vh;
+	margin: 0;
+    text-align: center;
+    background-color: #B8CBC5;
+}

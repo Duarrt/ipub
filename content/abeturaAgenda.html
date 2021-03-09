@@ -1,0 +1,41 @@
+<html lang="ptbr">
+<head>
+    <title>Abertura de Agenda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../styles/form2.css">
+</head>
+    <body>
+    <div class="form">
+        <form action="index.php?id=aberturaAgendaphp" method="POST">
+            <p style="font-size: 18px;">Gerenciamento de Agenda para Atendimento</p>
+            <div>
+                <label for="dataInicial">Data inicial:</label>
+                <input type="date" id="data" name="dataInicial">
+            </div>
+            <div>
+                <label for="dataFinal">Data final:</label>
+                <input type="date" id="data" name="dataFinal">
+            </div>
+            <div>    
+                <label for="pastor">Pastores disponíveis:</label> 
+                <input type="checkbox" name="pastor[]" value="1"> Pastor Samuel Tomaz
+                <input type="checkbox" name="pastor[]" value="2"> Pastor Adairton Dahora
+            </div>
+            <div>
+                <label for="hora">Selecione os horários:</label> 
+                <input type="checkbox" id="check" name="hora[]" value="09:00h">09:00h
+                <input type="checkbox" id="check" name="hora[]" value="10:00h">10:00h
+                <input type="checkbox" id="check" name="hora[]" value="13:00h">13:00h
+                <input type="checkbox" id="check" name="hora[]" value="14:00h">14:00h
+                <input type="checkbox" id="check" name="hora[]" value="15:00h">15:00h
+                <input type="checkbox" id="check" name="hora[]" value="16:00h">16:00h
+            </div>
+            <div class="button">
+                <button type="submit">Salvar Registro</button>
+            </div>
+
+        </form>
+    </div>    
+    </body>
+</html>    
